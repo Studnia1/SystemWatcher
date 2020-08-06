@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WatcherService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WatcherService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8000/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfDaneZdyskow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DaneZdyskow" type="tns:DaneZdyskow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDaneZdyskow" nillable="true" type="tns:ArrayOfDaneZdyskow" />
+  <xs:complexType name="DaneZdyskow">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="b" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="c" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="d" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="f" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="g" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DaneZdyskow" nillable="true" type="tns:DaneZdyskow" />
+  <xs:complexType name="ArrayOfDane">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dane" type="tns:Dane" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDane" nillable="true" type="tns:ArrayOfDane" />
+  <xs:complexType name="Dane">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="czas" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="zmiana" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dane" nillable="true" type="tns:Dane" />
+</xs:schema>
